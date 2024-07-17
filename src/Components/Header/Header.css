@@ -1,16 +1,18 @@
 .navbar {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFC7ED; 
+    color: rgb(255, 199, 237); 
     gap: 100px;
     font-size: 1.3rem;
     padding: 20px 0;
+    z-index: 500;
 }
 
 
 .navbar-item {
-
+    z-index: 2000;
 }
 
 /* #C8ACD6 */
