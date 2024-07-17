@@ -3,6 +3,7 @@
 import AnimatedCursor from 'react-animated-cursor'
 import './App.css'
 import Header from './Components/Header/Header'
+import Demo from './demo-react-spring/Demo'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
   <div  className='app-wrapper'>
     <Header/>
+    <Demo/>
     <AnimatedCursor
           innerSize={0}
           outerSize={35}
