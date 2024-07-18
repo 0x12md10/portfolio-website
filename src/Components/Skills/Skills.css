@@ -1,0 +1,26 @@
+.skills-layout {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.skills-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 0 30px;
+}

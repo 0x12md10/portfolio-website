@@ -1,61 +1,56 @@
-import { useRef, useState } from "react";
-import "./Header.css";
-import { animated , useSpring } from "@react-spring/web";
-
+import { useSpring,animated, config, easings, useSprings } from "@react-spring/web"
+import "./Header.css"
 function Header() {
 
 
-  const [springProps, api] = useSpring(() => ({
-    top : '20',
-    left: '0',
-    width : '0',
-    height : '0',
-        visibility : 'hidden'
-  
-  }));
+  const [springs ,api] = useSprings(6,()=> {
+    return {
+      from :{
+        transform : 'scale(1)',
+        transformOrigin : 'left',
+        config : {
+          duration : '300'
+        }
+      }
+    }
+  })
 
-
-
-  function handleMouseOver(e) {
-    const rect = e.target.getBoundingClientRect()
-    api.start({
-      top : `${rect.top-10}px`,
-      left: `${rect.left-20}px`,
-      height : `${rect.height+20}px`,
-      width : `${rect.width + 40}px`,
-      visibility  : 'visible'
-  
+  function handleMouseOver(i) {
+    api.start((index) => {
+      if (index === i) {
+        return {
+          transform: 'scale(1.1)',
+          transformOrigin: 'left',
+        };
+      }
     });
   }
 
-  function handleMouseLeave() {
-    api.set({
-      width : '0',
-      height : '0',
-            visibility : 'hidden'
-    })
+  function handleMouseLeave(i) {
+    api.start((index) => {
+      if (index === i) {
+        return {
+          transform: 'scale(1)',
+          transformOrigin: 'left',
+        };
+      }
+    });
   }
 
   return (
+    <div className='header'>
+        <animated.div onMouseOver={()=> handleMouseOver(0)} onMouseLeave={()=>handleMouseLeave(0)} style={{color : '#000',textAlign:'justify',...springs[0]}} >Hi everyone <span className="wave">👋</span>, This is Abishek</animated.div>
 
-    <animated.div
-    onMouseLeave={handleMouseLeave}
-    className={'navbar'}
-    
-    >
-        <animated.div
-        style={{
-          ...springProps,
-          position: 'absolute',
-          border: '3px solid rgba(255, 199, 237,1)',
-          borderRadius: '25px',
-          zIndex : '1000'
-        }}
-        />
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)} className="navbar-item">/</animated.div>
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">skills</animated.div>
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Projects</animated.div>
-    </animated.div>
+        <animated.div onMouseOver={()=> handleMouseOver(1)} onMouseLeave={()=>handleMouseLeave(1)} style={{color : '#000',textAlign:'justify',...springs[1]}}>I&apos;m currently doing my Master&apos;s in Computer Science Specializing in ML <span className="header-emojis">🧑‍💻</span>.</animated.div>
+
+        <animated.div  onMouseOver={()=> handleMouseOver(2)} onMouseLeave={()=>handleMouseLeave(2)} style={{color : '#000',textAlign:'justify',...springs[2]}}>I do web application development <span className="header-emojis">🧩</span>, cook in my free time <span className="header-emojis">🍳</span>.</animated.div>
+
+        <animated.div onMouseOver={()=> handleMouseOver(3)} onMouseLeave={()=>handleMouseLeave(3)} style={{color : '#000',textAlign:'justify',...springs[3]}}>I don&apos;t bound myself to a specific stack <span className="header-emojis">👽</span>.</animated.div>
+
+        <animated.div  onMouseOver={()=> handleMouseOver(4)} onMouseLeave={()=>handleMouseLeave(4)} style={{color : '#000',textAlign:'justify',...springs[4]}}>Juggling with concepts <span className="header-emojis">🤔</span> in development ? <span className="header-emojis">👇</span></animated.div>
+
+        <animated.div onMouseOver={()=> handleMouseOver(5)} onMouseLeave={()=>handleMouseLeave(5)} style={{color : '#000',textAlign:'justify',...springs[5]}}>Have a glance at my blog , where I write <span className="header-emojis">📝</span> about new <span className="header-emojis">🆕</span>, interesting <span className="header-emojis">😁</span> , hard to learn❔ concepts.</animated.div>
+    </div>
   )
 }
 
