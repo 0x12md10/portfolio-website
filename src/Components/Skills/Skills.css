@@ -12,15 +12,70 @@
 .skills-header {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    display: inline-block;
 }
 
 .skill-items {
-    display: flex;
-    flex-direction: row;
-    gap: 70px;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    margin: 0 30px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 50px;
 }
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* ------------------------ */
+
+/* ---------tooltip--------- */
+
+/* Tooltip container */
+
+  
+
+  .skills-header .skills-header--tooltip {
+    visibility: hidden;
+    width: 300px;
+    color: #382b22;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 160%;
+    position: absolute;
+    z-index: 1;
+    left: -100px;
+    font-weight: normal;
+    border-radius: 20px;
+    border: 3px solid #b18597;
+    font-size: 1rem;
+    background-color: #fff0f0;
+  }
+
+
+  .skills-header .skills-header--tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-top: 10px;
+    margin-left: -15px;
+    border-width: 12px;
+    border-style: solid;
+
+    border-color: #b18597 transparent transparent transparent;
+  }
+  
+  .skills-header:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+  }
+
+  .skills-header:hover .skills-header--tooltip {
+    visibility: visible;
+  }
+
+/* ------------------------ */

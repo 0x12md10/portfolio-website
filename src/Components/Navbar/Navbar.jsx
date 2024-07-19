@@ -1,9 +1,20 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "./Navbar.css"
 import { animated , useSpring } from "@react-spring/web";
+import ScrollContext from "../../utils/ScrollContext";
 
 function Navbar() {
 
+  const sectionRefs = useContext(ScrollContext)
+
+  const scrollToSection = (section) => {
+    sectionRefs[section].current?.scrollIntoView({ behavior: 'smooth' });
+    console.log(sectionRefs[section].current);
+    console.log(section)
+    if(section === 'section5') {
+      console.log(sectionRefs[section].current);
+    }
+  };
 
   const [springProps, api] = useSpring(() => ({
     top : '20',
@@ -52,10 +63,11 @@ function Navbar() {
           zIndex : '1000'
         }}
         />
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)} className="navbar-item">/</animated.div>
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">skills</animated.div>
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Projects</animated.div>
-        <animated.div onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Blog</animated.div>
+        <animated.div onClick={()=>scrollToSection('section1')}  onMouseOver={(e)=> handleMouseOver(e)} className="navbar-item">/</animated.div>
+        <animated.div onClick={()=>scrollToSection('section2')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Skills</animated.div>
+        <animated.div onClick={()=>scrollToSection('section3')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Projects</animated.div>
+        <animated.div onClick={()=>scrollToSection('section5')} onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Blog</animated.div>
+        <animated.div onClick={()=>scrollToSection('section4')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Social</animated.div>
     </animated.div>
   )
 }

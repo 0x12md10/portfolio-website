@@ -20,6 +20,10 @@ export default [
         icon : 'aws.png'
     },
     {
+        name : 'GCP',
+        icon : 'gcp.png'
+    },
+    {
         name : 'Docker',
         icon : 'docker.png'
     },

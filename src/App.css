@@ -1,5 +1,9 @@
 .app-wrapper {
-  background-color: rgb(252, 248, 243);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 
 
 }

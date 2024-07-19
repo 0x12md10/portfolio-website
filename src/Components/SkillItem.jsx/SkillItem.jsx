@@ -1,11 +1,12 @@
 import "./SkillItem.css";
 
 
-function SkillItem({skill,src}) {
+function SkillItem({skill}) {
   return (
     <div className="button-10 " role="button">
       <div className="btn-skill">
-      <div className="skill-icons-wrapper"><img className="skill-icon" src={`/techIcons/${src}`} alt="" /></div><div className="text">{skill}</div>
+        {skill.icon && <div className="skill-icons-wrapper"><img className="skill-icon" src={`/techIcons/${skill.icon}`} alt="" /></div>}
+        <div className="text">{skill.name}</div>
       </div>
     </div>
   )

@@ -4,20 +4,29 @@ import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Header from './Components/Header/Header'
 import Skills from './Components/Skills/Skills'
+import Footer from './Components/Footer/Footer'
+import Work from './Components/Work/Work'
+import { useRef } from 'react'
 
-
+import RefProvider from './utils/RefProvider'
+import Blog from './Components/Blog/Blog'
 
 function App() {
 
 
+  
 
   return (
-  <div  className='app-wrapper'>
+    <RefProvider>
+<div  className='app-wrapper'>
     <main className='main'>
       <Navbar/>
       <Header/>
+      <Blog/>
     </main>
     <Skills/>
+    <Work/>
+    <Footer/>
     <AnimatedCursor
           innerSize={5}
           outerSize={45}
@@ -35,6 +44,8 @@ function App() {
           }}
     />
   </div>
+    </RefProvider>
+  
   )
 }
 

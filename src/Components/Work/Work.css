@@ -1,0 +1,270 @@
+.work-section {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+
+}
+
+/* ----------------------------- */
+.work-section--header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.work-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: stretch;
+
+
+}
+
+.work-section--items {
+
+    border: 3px solid #b18597;
+    border-radius: 15px;
+    padding: 20px 20px;
+}
+
+
+/* -------------------------- */
+
+.work-author--details {
+    color: #387cce	;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+
+}
+
+.work-author--name {
+    font-size: 1.1rem;
+    font-weight:500;
+
+}
+
+.work-author--github {
+    font-size: 1.4rem;
+}
+
+.loader {
+    border: 3px solid #387cce;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    width: 20px;
+    height: 20px;
+    animation-name: loading;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+@keyframes loading{
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+/* ---------------------- */
+
+.work-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.work-title {
+    font-weight: 700;
+    color: #b844b3;
+}
+
+.work-description {
+    font-weight: 600;
+    color: #deaa2f;
+}
+
+.work-technology {
+    font-weight: 500;
+    color: #33a057;
+}
+.work-dot {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #33a057;
+    background-color: #33a057;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-bottom: 3px;
+
+}
+
+
+/* ------------------------ */
+
+/* ---------tooltip--------- */
+
+/* Tooltip container */
+
+  
+
+.work-section--header .works-header--tooltip {
+    visibility: hidden;
+    width: 300px;
+    color: #382b22;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 160%;
+    position: absolute;
+    z-index: 1;
+    left: -120px;
+    font-weight: normal;
+    border-radius: 20px;
+    border: 3px solid #b18597;
+    font-size: 1rem;
+    background-color: #fff0f0;
+  }
+
+
+  .work-section--header .works-header--tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-top: 10px;
+    margin-left: -15px;
+    border-width: 12px;
+    border-style: solid;
+
+    border-color: #b18597 transparent transparent transparent;
+  }
+  
+  .work-section--header:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+  }
+
+  .work-section--header:hover .works-header--tooltip {
+    visibility: visible;
+  }
+
+/* ------------------------ */
+
+
+
+
+/* Tooltip container */
+
+  
+
+.work-author--github .github {
+  visibility: hidden;
+  width: 150px;
+  color: #382b22;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  bottom: 190%;
+  position: absolute;
+  z-index: 1;
+  left: -60px;
+  font-weight: normal;
+  border-radius: 20px;
+  border: 3px solid #b18597;
+  font-size: 0.8rem;
+  background-color: #fff0f0;
+}
+
+
+.work-author--github .github::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-top: 10px;
+  margin-left: -15px;
+  border-width: 12px;
+  border-style: solid;
+
+  border-color: #b18597 transparent transparent transparent;
+}
+
+.work-author--github:hover {
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+
+.work-author--github:hover .github {
+  visibility: visible;
+}
+
+/* ------------------------ */
+
+
+
+/* Tooltip container */
+.loader-tooltip-container{
+  position: relative;
+}
+  
+
+.loader-tooltip-container .loader-tooltip {
+  visibility: hidden;
+  width: 150px;
+  color: #382b22;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  bottom: 200%;
+  position: absolute;
+  z-index: 100;
+  left: -60px;
+  font-weight: normal;
+  border-radius: 20px;
+  border: 3px solid #b18597;
+  font-size: 0.95rem;
+  background-color: #fff0f0;
+}
+
+
+.loader-tooltip-container .loader-tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-top: 10px;
+  margin-left: -15px;
+  border-width: 12px;
+  border-style: solid;
+
+  border-color: #b18597 transparent transparent transparent;
+}
+
+.loader-tooltip-container .loader:hover {
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+
+.loader-tooltip-container:hover .loader-tooltip {
+  visibility: visible;
+}
+
+/* ------------------------ */
