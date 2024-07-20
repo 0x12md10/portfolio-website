@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext } from "react";
 import "./Navbar.css"
 import { animated , useSpring } from "@react-spring/web";
 import ScrollContext from "../../utils/ScrollContext";
@@ -10,8 +10,6 @@ function Navbar() {
 
   const scrollToSection = (section) => {
     if(section === 'section5') {
-      console.log(section)
-      console.log(sectionRefs[section]);
       return;
     }
     sectionRefs[section].current?.scrollIntoView({ behavior: 'smooth' });

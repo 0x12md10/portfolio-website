@@ -9,6 +9,8 @@
     padding: 20px 0;
     z-index: 500;
     user-select: none;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 
