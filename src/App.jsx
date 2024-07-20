@@ -6,16 +6,15 @@ import Header from './Components/Header/Header'
 import Skills from './Components/Skills/Skills'
 import Footer from './Components/Footer/Footer'
 import Work from './Components/Work/Work'
-import { useRef } from 'react'
+
 
 import RefProvider from './utils/RefProvider'
 import Blog from './Components/Blog/Blog'
 
 
+
 function App() {
 
-
-  
 
   return (
     <RefProvider>

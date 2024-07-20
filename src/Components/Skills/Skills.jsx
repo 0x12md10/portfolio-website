@@ -6,7 +6,7 @@ import ScrollContext from "../../utils/ScrollContext";
 
 function Skills() {
 
-  const sectionRefs = useContext(ScrollContext)
+  const {sectionRefs} = useContext(ScrollContext)
 
   return (
     <div  ref={sectionRefs.section2} className="skills-layout">

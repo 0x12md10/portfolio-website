@@ -6,12 +6,16 @@ import ScrollContext from "../../utils/ScrollContext";
 
 function Navbar() {
 
-  const sectionRefs = useContext(ScrollContext)
+  const {sectionRefs} = useContext(ScrollContext)
+  const {focusRef} = useContext(ScrollContext)
 
   const scrollToSection = (section) => {
-    if(section === 'section5') {
+    if(section === 'blogFocus') {
+      focusRef.current.focus();
+
       return;
     }
+    console.log(section, sectionRefs[section]);
     sectionRefs[section].current?.scrollIntoView({ behavior: 'smooth' });
 
 
@@ -68,7 +72,7 @@ function Navbar() {
         <animated.div onClick={()=>scrollToSection('section1')}  onMouseOver={(e)=> handleMouseOver(e)} className="navbar-item">/</animated.div>
         <animated.div onClick={()=>scrollToSection('section2')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Skills</animated.div>
         <animated.div onClick={()=>scrollToSection('section3')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Projects</animated.div>
-        <animated.div onClick={()=>scrollToSection('section5')} onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Blog</animated.div>
+        <animated.div onClick={()=>scrollToSection('blogFocus')} onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Blog</animated.div>
         <animated.div onClick={()=>scrollToSection('section4')}  onMouseOver={(e)=> handleMouseOver(e)}  className="navbar-item">Social</animated.div>
     </animated.div>
   )

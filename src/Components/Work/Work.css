@@ -57,6 +57,11 @@
     font-size: 1.4rem;
 }
 
+.work-author--github a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .loader {
     border: 3px solid #387cce;
     border-radius: 50%;

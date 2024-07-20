@@ -4,7 +4,7 @@ import { useContext } from "react"
 import ScrollContext from "../../utils/ScrollContext"
 function Header() {
 
-  const sectionRefs = useContext(ScrollContext);
+  const {sectionRefs} = useContext(ScrollContext);
   const [springs ,api] = useSprings(6,()=> {
     return {
       from :{
