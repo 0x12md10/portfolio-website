@@ -39,7 +39,10 @@ function Blog() {
           setBtnActive(true);
         } catch (error) {
           console.log(error)
-          toast.error("Uh oh 🤔,  error occured, Try again later.")
+          toast.error("Uh oh 🤔,  error occured, Try again later.");
+          setEmail("")
+          setBtnActive(true);
+          
         }
       } else {
         toast.warn("Uh oh 🤔,  Enter a valid email.");
