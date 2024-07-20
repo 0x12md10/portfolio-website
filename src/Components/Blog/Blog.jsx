@@ -25,7 +25,7 @@ function Blog() {
       if(email && email.length >=7) {
         setBtnActive(false)
         try {
-          const res = await axios.post("http://localhost:3000/post" , {
+          const res = await axios.post("https://maillist.abisheka.in/post" , {
             email
           })
           if(res.data.msg) {
