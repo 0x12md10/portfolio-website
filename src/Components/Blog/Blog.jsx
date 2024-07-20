@@ -31,6 +31,7 @@ function Blog() {
           setBtnActive(true);
         } catch (error) {
           console.log(error)
+          toast.error("error occured, Try again later.")
         }
       } else {
         toast.warn("Uh oh, 🤔 Enter a valid email.");
