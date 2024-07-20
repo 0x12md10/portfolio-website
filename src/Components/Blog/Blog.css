@@ -93,3 +93,8 @@
     transform: translate3d(0, 0, -1em);
   }
   
+
+  .blog-subscribe .btn-disabled {
+    pointer-events: none;
+    background-color: #a0476c;
+  }

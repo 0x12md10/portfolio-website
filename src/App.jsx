@@ -11,6 +11,7 @@ import { useRef } from 'react'
 import RefProvider from './utils/RefProvider'
 import Blog from './Components/Blog/Blog'
 
+
 function App() {
 
 
@@ -23,6 +24,7 @@ function App() {
       <Navbar/>
       <Header/>
       <Blog/>
+
     </main>
     <Skills/>
     <Work/>
