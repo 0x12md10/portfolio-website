@@ -25,18 +25,24 @@ function Blog() {
       if(email && email.length >=7) {
         setBtnActive(false)
         try {
-          const res = await axios.post("https://maillist.abisheka.in/post" , {
+          const res = await axios.post("http://localhost:3000/post" , {
             email
           })
-          toast.success("successfully subscribed 🎉");
+          if(res.data.msg) {
+            toast.info("you're already subscribed ✌️.");
+            
+          } else {
+            toast.success("successfully subscribed 🎉");
+          }
+
           setEmail("")
           setBtnActive(true);
         } catch (error) {
           console.log(error)
-          toast.error("error occured, Try again later.")
+          toast.error("Uh oh 🤔,  error occured, Try again later.")
         }
       } else {
-        toast.warn("Uh oh, 🤔 Enter a valid email.");
+        toast.warn("Uh oh 🤔,  Enter a valid email.");
       }
 
     }
