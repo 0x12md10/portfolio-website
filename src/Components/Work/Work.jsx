@@ -26,6 +26,13 @@ const works = [
         isCompleted : false,
         link : ""
     },
+    {
+        title : "Dukaan Dashboard UI",
+        description : "Payouts dashboard for Dukaan for a sleek and responsive design.",
+        technology : "React , TailwindCSS",
+        isCompleted : true,
+        link : "https://github.com/0x12md10/Dukaan-Dashboard"
+    }
     
 ]
 
@@ -46,7 +53,7 @@ function Work() {
         
                         <div key={index} className="work-section--items">
                             <div className="work-author--details">
-                                <div className="work-author--name">Abishek</div>
+                                <div className="work-author--name"><div className="profile-img"><img src="./profile.jpg" alt="" /></div><div>Abishek</div></div>
                                 {work.isCompleted ?<div className="work-author--github"><a href={work.link} target="_blank"><LuGithub/></a><span className="github">look at the code</span></div> : <div className="loader-tooltip-container"><span className="loader-tooltip">still in work</span><div className="loader"></div></div> }
                             </div>
                             <div className="work-details">

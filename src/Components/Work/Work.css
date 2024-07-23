@@ -1,5 +1,5 @@
 .work-section {
-    height: 100vh;
+    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -47,9 +47,26 @@
 
 }
 
+.profile-img {
+  height : 25px;
+  width : 25px;
+  border: 1px solid #33a057;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+
+}
+
 .work-author--name {
     font-size: 1.1rem;
     font-weight:500;
+    display: flex;
+    gap : 10px;
 
 }
 
